@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./cssfile/Style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./cssfile/toaster.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+/>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-wEmeIV1mKuiNpC+IOBj17aAzPcEZeedi5yw5f2y0q55WWLWNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<meta name="google-signin-client_id" content="25830659239-085c4n7pb1jgksvu7i04jih6k035h462.apps.googleusercontent.com">
+  <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    /> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+ <script>
+     
+     const clientId = "25830659239-085c4n7pb1jgksvu7i04jih6k035h462.apps.googleusercontent.com";
+
+        function onSignIn(googleUser) {
+            // Retrieve user information
+            
+            var profile = googleUser.getBasicProfile();
+            var email = profile.getEmail();
+            var idToken = googleUser.getAuthResponse().id_token;
+
+            // Get user's name and profile image
+            var userName = profile.getName();
+            var profileImage = profile.getImageUrl();
+           
+
+            // Display user information on the webpage
+            document.getElementById('firstname').textContent = 'Name: ' + userName;
+            document.getElementById('email').textContent = email;
+
+            // You can use 'email' and 'idToken' for authentication or other purposes.
+            // Send this data to your server for verification and user management.
+        }
+    </script>
+  
+  <style>
+    .primary-color {
+      background-color: #001f3f;
+      color: #ffffff;
+      /* Text color on the primary background */
+    }
+
+    :hover.active {
+      box-shadow: rgba(11, 103, 153, 0.642);
+      /* filter: drop-shadow(10px 10px 10px rgba(11, 103, 153, 0.642)); Soft gray shadow */
+      color: black;
+    }
+
+    .active-bg {
+      background: rgb(147, 206, 218);
+      /* background: linear-gradient(90deg, rgba(147,206,218,1) 0%, rgba(62,55,221,1) 0%, rgba(201,47,213,1) 100%); */
+    }
+
+    .active-hover {
+      background-color: black;
+      /* filter:drop-shadow(10 10 10 red); */
+      /* box-shadow: #001f3f; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <div class="flex w-screen flex-col items-center primary-color object-cover">
+        <div class="max-w-[1600px] w-11/12 flex flex-col items-center justify-between primary-color border-b-yellow-200 ">
+          <div class="w-full  flex items-center justify-between  border-b-2 border-slate-200">
+            <div class="logo">
+              <img src="./assets/IMG_20230909_193215-removebg-preview-removebg-preview.png" class="h-[80px] w-[130px]  py-[5px] px-0" alt="">
+            </div>
+  
+             
+            <ul class="flex justify-between items-center object-cover gap-4">
+              <a href="http://127.0.0.1:5500/index.html" class="flex items-center border-primary-color px-3 py-2 rounded-md hover:bg-yellow-500 bg-yellow-500 text-black hover:text-black transition-all duration-200 hover:scale-95"><li>Home</li></a>
+              <a class="flex items-center border-primary-color px-3 py-2 rounded-md hover:bg-yellow-500 hover:text-black transition-all duration-200 hover:scale-95"><li>Services</li></a>
+              <a class="flex items-center border-primary-color px-3 py-2 rounded-md hover:bg-yellow-500 hover:text-black transition-all duration-200 hover:scale-95"><li>About Us</li></a>
+          </ul>
+  
+          <div class="flex  items-center justify-between">
+            <div class="text-white flex flex-row gap-4 mr-5 border-primary-color">
+              <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 hover:bg-blue-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              </span>
+              <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 hover:bg-red-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </span>
+              <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 hover:bg-pink-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </span>
+              <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 hover:bg-green-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </span>
+            </div>
+  
+            <div class="flex  flex-row ">
+              <a href="http://127.0.0.1:5500/Login.html?#" class="flex items-center px-3 py-2 rounded-md hover:bg-yellow-500 font-bold hover:text-black transition-all duration-200 hover:scale-95"><li>Login</li></a>
+              <a  href="http://127.0.0.1:5500/SignUp.html?#" class="flex items-center px-3 py-2 rounded-md hover:bg-yellow-500 font-bold hover:text-black transition-all duration-200 hover:scale-95"><li>SignUp</li></a>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="flex w-screen flex-col items-center text-white primary-color  object-cover">
+            <nav class="max-w-[1200px] w-11/12  text-white top-header primary-color justify-center flex px-2 items-center object-cover py-4"> 
+           
+            </nav> 
+       </div>
+      </div> -->
+
+  <div class="flex h-screen flex-col items-center bg-white object-cover">
+    <ul class="notifications"></ul>
+    <div class="flex max-w-[1600px] w-full h-full object-cover relative">
+      <!-- Left bar -->
+      <a href="index.html" class="absolute top-0 left-0 flex gap-2 items-center font-bold text-white primary-color px-3 py-2 rounded-lg">
+        <i class="fa fa-home fa-2x  flex items-center justify-center text-yellow-300" aria-hidden="true"></i>
+        Go To Home
+      </a>
+      <div class="primary-color w-[40%] h-full hidden items-center justify-center md:flex lg:flex ">
+        
+        <img
+          src="https://res.cloudinary.com/depiyqis9/image/upload/v1694531856/Eballot/IMG_20230909_193215-removebg-preview-removebg-preview_yjscvg.png"
+          alt="">
+      </div>
+
+      <!-- Right bar -->
+      <div
+        class="flex  object-cover  max-w-[700px] w-[100%] xl:w-[60%] lg:w-[60%] min-w-[100px] items-center justify-center flex-col mx-auto  ">
+        <!-- Right bar -->
+        <form
+          class="flex  object-cover w-[60%] min-w-[440px]  md:w-[80%] lg:w-[80%] py-3  shadow-xl shadow-black items-center justify-center flex-col mx-auto  rounded-md   " id="form">
+
+
+          <legend class="text-3xl p-2 font-bold text-[#1d3a59] mb-6 mx-auto flex items-center justify-center z-10 ">Sign Up
+          </legend>
+
+          <!-- First and Last Name input -->
+          <div
+            class="flex justify-center items-center  min-w-[220px] md:max-w-[270px] lg:max-w-[400px]  w-[60%] lg:flex-row flex-col">
+            <label
+              class="flex p-2 min-w-[220px] lg:min-w-[160px] lg:w-[20%] md:max-w-[330px] lg:max-w-[250px] flex-col w-[100%] rounded-md text-sm">
+              First Name:
+              <input type="text" placeholder="Enter Your Name:"
+                 id = "firstname"
+                class="border border-black p-2 py-1 rounded-md shadow-lg" />
+            </label>
+            <label
+              class="flex p-2 min-w-[220px] lg:min-w-[160px] lg:w-[20%] md:max-w-[330px] lg:max-w-[250px] flex-col w-[100%] rounded-md text-sm ">
+              First Name:
+              <input type="text" placeholder="Enter Your Name:"
+                class="border border-black p-2 py-1 rounded-md shadow-lg" />
+            </label>
+          </div>
+
+          <!-- Mobile number -->
+          <label class="flex p-2 min-w-[220px] md:max-w-[270px] lg:max-w-[320px] flex-col w-[60%] rounded-md">
+            Number:
+            <input type="number" placeholder="Enter Your Number:"
+              class="border border-black p-2 py-1 rounded-md text-sm shadow-lg" />
+
+          </label>
+
+          <!-- email -->
+          <label class="flex p-2 min-w-[220px] md:max-w-[270px] lg:max-w-[320px] flex-col w-[60%] rounded-md ">
+            Email:
+            <input type="Email" placeholder="Enter Your Email:"
+              id = "email"
+              class="border border-black p-2 py-1 rounded-md text-sm shadow-lg" />
+
+          </label>
+
+          <!-- Aadhar Number -->
+          <label class="flex p-2 min-w-[220px] md:max-w-[270px] lg:max-w-[320px] flex-col w-[60%] rounded-md">
+            Aadhar Number:
+            <input type="Email" placeholder="12 Digit Aadhar Number :" inputmode="numeric"
+              class="border border-black p-2 py-1 rounded-md text-sm shadow-lg" />
+          </label>
+
+
+          <!-- Password and Confirm Password  -->
+
+          <div
+            class="flex justify-center items-center  min-w-[220px] md:max-w-[270px] lg:max-w-[400px]  w-[60%] lg:flex-row flex-col">
+            <label
+              class="flex p-2 min-w-[220px] lg:min-w-[160px] lg:w-[20%] md:max-w-[330px] lg:max-w-[250px] flex-col w-[100%] rounded-md text-sm">
+              Password:
+              <input type="Password" placeholder="Enter Your Password:"
+                class="border border-black p-2 py-1 rounded-md shadow-lg" />
+            </label>
+            <label
+              class="flex p-2 min-w-[220px] lg:min-w-[160px] lg:w-[20%] md:max-w-[330px] lg:max-w-[250px] flex-col w-[100%] rounded-md text-sm ">
+              Confirm Password:
+              <input type="Password" placeholder="Enter Your Password:"
+                class="border border-black p-2 py-1 rounded-md shadow-lg" />
+            </label>
+          </div>
+
+          <!-- Login and Sign Up buttons -->
+          <button class="flex max-w-[50%] w-[30%] lg:max-w-[290px] min-w-[180px] md:max-w-[320px] bg-black flex-col justify-between items-center px-2 py-2 border text-white hover:bg-blue-900 border-slate-800 hover:text-white group transition-all duration-200 rounded-xl hover:scale-95 shadow-xl hover:shadow-blue-700 shadow-black hover:shadow-xl mt-4">
+            SignUp
+          </button>
+
+          <div
+            class="flex max-w-[50%] w-[80%] lg:max-w-[290px] min-w-[180px]   flex-col justify-between items-center px-2 py-2  mt-5">
+            <p> Or Sign Up Using</p>
+            <div class="text-black  flex flex-row gap-2 mr-5 border-primary-color mt-3">
+              <span
+                class="flex items-center justify-center border text-white rounded-full h-9 w-9 bg-blue-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              </span>
+              <span
+                class="flex items-center justify-center border text-white rounded-full h-9 w-9 bg-red-600 hover:text-white transition-all duration-200">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </span>
+              
+              <div class="g-signin2" data-onsuccess="onSignIn" >
+               
+              </div>
+           
+            </div>
+
+          </div>
+
+          <div class="flex justify-center items-center flex-col mt-15 gap-2">
+            <p> Have an account ?</p>
+            <a href="Login.html" class="font-bold">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script defer src="/your-path-to-fontawesome/js/all.js"></script> <!--load all styles -->
+  <script src="./jsfiles/index.js"></script>
+  <script src="./jsfiles//signup.js"></script>
+  <script type="module" src="./jsfiles/taoster.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../cssfile/Style.css">
+    <link rel="stylesheet" href="../cssfile/toaster.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-500  text-gray-900">
+  
+    <div class="container mx-auto ">
+        <nav class="flex bg-black items-center justify-between p-2">
+            <button class="open">
+                <i class="fa fa-bars fa-2x text-white" aria-hidden="true"></i>
+              </button>
+    
+              <button class=" close ">
+                <i class="fa fa-times fa-2x text-white" aria-hidden="true"></i>
+              </button>
+
+            <a href="UserHome.html" class=" top-0 left-0 flex gap-2 items-center font-bold text-white primary-color px-3 py-2 rounded-lg">
+                <i class="fa fa-home fa-2x  flex items-center justify-center text-yellow-300" aria-hidden="true"></i>
+                Go To Home
+              </a>
+        </nav>
+        <div class=" h-screen max-w-[1400px] w-full flex">
+            <!-- Sidebar -->
+            <aside class="w-1/4  primary-color text-white p-6 relative hidden md:block  lg:block">
+            <div class="flex justify-between flex-col items-center ">
+              
+                <h2 class="right-0 top-0 text-2xl font-semibold mb-4 mt-2 overflow-visible text-center">User Menu</h2>
+                <ul class="flex items-center justify-center flex-col mt-9">
+                    <div class="flex justify-center mb-4">
+                        <img src="../assets/ap.jpg" alt="Profile Image" class="w-32 h-32 rounded-full object-cover">
+                    </div>
+                    <li class="mb-2">
+                        <!-- Add an ID to the button for JavaScript interaction -->
+                        <button id="view-profile-btn" class="text-blue-300 hover:text-blue-100">View Profile</button>
+                    </li>
+                    <li class="mb-2">
+                        <!-- Add an ID to the button for JavaScript interaction -->
+                        <button id="update-profile-btn" class="text-blue-300 hover:text-blue-100">Update Profile</button>
+                    </li>
+                    <li class="mb-2">
+                        <!-- Add an ID to the button for JavaScript interaction -->
+                        <button id="change-password-btn" class="text-blue-300 hover:text-blue-100">Change Password</button>
+                    </li>
+                </ul>
+            </aside>
+            <!-- mobile manu -->
+            <aside class="w-1/4  primary-color text-white p-6 relative mobile_nav_profile flex md:hidden  lg:hidden mobile ">
+                
+                    <h2 class="right-0 top-0 text-2xl font-semibold mb-4 mt-2 overflow-visible text-center">User Menu</h2>
+                    <ul class="flex items-center justify-center flex-col mt-9">
+                        <div class="flex justify-center mb-4">
+                            <img src="../assets/ap.jpg" alt="Profile Image" class="w-32 h-32 rounded-full object-cover">
+                        </div>
+                        <li class="mb-2">
+                            <button id="view-profile-btn-mobile" class="text-blue-300 hover:text-blue-100">View Profile</button>
+                        </li>
+                        <li class="mb-2">
+                            <button id="update-profile-btn-mobile" class="text-blue-300 hover:text-blue-100">Update Profile</button>
+                        </li>
+                        <li class="mb-2">
+                            <button id="change-password-btn-mobile" class="text-blue-300 hover:text-blue-100">Change Password</button>
+                        </li>
+                    </ul>
+                </aside>
+
+    
+           <!-- Main Content -->
+         <main class="w-full p-6">
+        <div class="bg-white p-6 rounded-lg shadow-md" id="containt">
+          
+        </div>
+        </main>
+    
+        </div>
+    
+    </div>
+   
+    <script type="module" src="../jsfiles/userprofile.js"></script>
+</body>
+</html>

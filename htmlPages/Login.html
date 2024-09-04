@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../cssfile/Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../cssfile/toaster.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex h-screen flex-col items-center bg-white object-cover">
+      <div class="flex max-w-[1600px] w-full h-full object-cover relative">
+          <ul class="notifications"></ul>
+            <!-- Left bar -->
+            <a href="index.html" class="absolute top-0 left-0 flex gap-2 items-center font-bold text-white primary-color px-3 py-2 rounded-lg">
+              <i class="fa fa-home fa-2x  flex items-center justify-center text-yellow-300" aria-hidden="true"></i>
+              Go To Home
+            </a>
+            <div class="primary-color w-[40%] h-full hidden items-center justify-center md:flex lg:flex ">
+                <img src="https://res.cloudinary.com/depiyqis9/image/upload/v1694531856/Eballot/IMG_20230909_193215-removebg-preview-removebg-preview_yjscvg.png" alt="">
+            </div>
+            <!-- Right bar -->
+            <div class="flex  object-cover max-w-[700px] w-[100%] xl:w-[60%] lg:w-[60%] items-center justify-center flex-col mx-auto relative ">
+             
+
+               <!-- home button -->
+
+              
+             <form class="flex  object-cover w-[60%] min-w-[440px] md:w-[80%] lg:w-[80%] py-3  shadow-xl shadow-black items-center justify-center flex-col mx-auto  rounded-md" id="form">
+  
+                 
+                  <legend class="text-3xl p-2 font-bold text-[#1d3a59] mb-6 mx-auto flex items-center justify-center ">Login</legend>
+                  
+  
+                  <!-- email -->
+                  <label class="flex p-2 min-w-[220px] md:max-w-[270px] lg:max-w-[370px] flex-col w-[50%] rounded-md ">
+                      Email:
+                      <input type="Email"  placeholder="Enter Your Email:" class="border border-black p-2 py-1 rounded-md text-sm shadow-lg" />
+                     
+                  </label>
+  
+                   <!-- Aadhar Number -->
+                   <label class="flex p-2 min-w-[220px] md:max-w-[270px] lg:max-w-[370px] flex-col w-[50%] rounded-md">
+                      Password:
+                      <input type="Password" placeholder="Enter Your Email:"  class="border border-black p-2 py-1 rounded-md text-sm shadow-lg" />
+                  </label>
+       
+                  
+           
+                  <!-- Login and Sign Up buttons -->
+                  <button class="flex max-w-[50%] w-[30%] lg:max-w-[290px] min-w-[180px] md:max-w-[320px] bg-black flex-col justify-between items-center px-2 py-2 border text-white hover:bg-blue-900 border-slate-800 hover:text-white group transition-all duration-200 rounded-xl hover:scale-95 shadow-xl hover:shadow-blue-700 shadow-black hover:shadow-xl mt-4">
+                    login
+                  </button>
+                  <div class="flex max-w-[50%] w-[80%] lg:max-w-[290px] min-w-[180px]   flex-col justify-between items-center px-2 py-2  mt-5">
+                    <p> Or Sign Up Using</p>
+                    <div class="text-black  flex flex-row gap-2 mr-5 border-primary-color mt-3">
+                      <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 bg-blue-600 hover:text-white transition-all duration-200">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                      </span>
+                      <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 bg-red-600 hover:text-white transition-all duration-200">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </span>
+                      <span class="flex items-center justify-center border text-white rounded-full h-9 w-9 bg-green-600 hover:text-white transition-all duration-200">
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                      </span>
+                    </div>
+  
+                  </div>
+                   
+                 <div class="flex justify-center items-center flex-col mt-20 gap-2">
+                  <p> Have an account ?</p>
+                  <a href="SignUp.html" class="font-bold">SignUp</a>
+                 </div>
+              </form>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <!-- <script defer src="/your-path-to-fontawesome/js/all.js"></script> load all styles -->
+    <script type="module" src="../jsfiles/login.js"></script>
+    <!-- <script type="module" src="index.js"></script> -->
+     <script type="module" src="../jsfiles/taoster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+</body>
+</html>
